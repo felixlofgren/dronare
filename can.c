@@ -17,6 +17,14 @@ void can_print(const CAN_Meddelande* c) {
     printf("\n");
 }
 
+void can_reset(CAN_Meddelande* c) {
+    c->id = 0;
+    c->längd = 0;
+    for (int i=0;i<8;i++){
+        c->data[i] = 0;
+    }
+}
+
 void can_packa_motor(CAN_Meddelande* c, const Motor* m){
     c->längd = 5;
     c->data[0] = m->id & 0xFF;          // id låg byte

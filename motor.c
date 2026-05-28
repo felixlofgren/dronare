@@ -7,6 +7,10 @@ void motor_init(Motor *m, uint16_t id){
     m->status = MOTOR_OFF;
 }
 
+void motor_set_id(Motor *m, uint16_t id) {
+    m->id = id;
+}
+
 void motor_on(Motor *m){
     m->status = MOTOR_ON;
 }
